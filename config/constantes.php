@@ -1,9 +1,21 @@
 <?php
+/*  echo'<pre>';
+var_dump($_SERVER); //permet d'afficher les informations du serveur
+echo'</pre>'; */ 
+
  /**
 * Chemin sur dossier racine du projet
 */
-define("ROOT",str_replace("public".DIRECTORY_SEPARATOR."index.php","",$_SERVER['SCR
-IPT_FILENAME']));
+define("ROOT",str_replace("public".DIRECTORY_SEPARATOR."index.php","",$_SERVER['SCRIPT_FILENAME']));
+
+define("DOSSIER_PUBLIC",str_replace("index.php","",$_SERVER['SCRIPT_NAME']));
+/* var_dump(DOSSIER_PUBLIC); */
+
+/* echo'<pre>';
+var_dump(ROOT); //permet d'afficher les informations du serveur
+echo'</pre>'; */
+/* die */
+
 /**
 * Chemin sur dossier src qui contient les controllers et les modeles
 */
@@ -19,5 +31,8 @@ define("PATH_DB",ROOT."data".DIRECTORY_SEPARATOR."db.json");
 
 /* c'est ici qu'on envoie tous requet GET ou POST */
 
-define("WEB,ROOT","http://localhost:8181/");
-
+define("WEB_ROOT","http://localhost:8181/");
+//cle  d'erreurs
+define("KEY_ERRORS","errors");
+//cle d'acces a l'utilisateurs
+define("KEY_USER_CONNECT","user-connect");
